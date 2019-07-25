@@ -28,7 +28,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 |password|string|null: false|
 |e-mail|string|null: false, unique: true|
 
@@ -44,8 +44,8 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |date|datetime|null: false|
-|body|text|null: false|
-|image|string|null: false|
+|body|text||
+|image|string||
 
 ### Association
 - belongs_to :user
