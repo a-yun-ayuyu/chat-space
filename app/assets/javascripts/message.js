@@ -35,20 +35,13 @@ $('#new_message').on('submit', function(e){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('#message_content').val('');
-      function scrollBottom(){
-        var target = $('.message').last();
-        var position = target.offset().top + $('.messages').scrollTop();
-        $('.messages').animate({
-          scrollTop: position
-        }, 300, 'swing');
-      }
-    })
-    .fail(function(data){
-      alert('error');
-    })
-    .always(function(data){
+      $("#new_message")[0].reset();
       $('.form__submit').prop('disabled', false);
-    })  
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+    })
+    .fail(function(){
+      alert('error')
+      $('.form__submit').prop('disabled', false);
   })
+})
 });
