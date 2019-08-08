@@ -6,18 +6,14 @@
     .header
       .left-header
         .left-header__title
-          グループ名
+        = @group.name
         %ul.left-header__members
           Member：
           %li.member
             メンバー名
-          %li.member
-            メンバー名
-          %li.member
-            メンバー名
       .right-header
         .right-header__button
-          Edit
+        = link_to "edit","edit",class: 'button'
     .messages
       = render @messages
     .form
