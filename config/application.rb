@@ -17,6 +17,12 @@ module ChatSpace
     end
     
     config.i18n.default_locale = :ja
+   
+    # 時刻設定を日本時間にする
+    config.time_zone = 'Tokyo'
+
+    # carrierwaveを使えるようにする
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
 
   end
 end
