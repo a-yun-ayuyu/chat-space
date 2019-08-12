@@ -14,3 +14,4 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'a-yun-ayuyu'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/a-yun-ayuyu'
+end
