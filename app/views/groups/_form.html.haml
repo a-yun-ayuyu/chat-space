@@ -29,6 +29,8 @@
           %input{ name: 'group[user_ids][]', type: 'hidden', value: current_user.id }
             %p.chat-group-user__name
               = current_user.name
+
+
         - group.users.each do |user|
           - unless current_user.id == user.id
             .chat-group-user.clearfix
