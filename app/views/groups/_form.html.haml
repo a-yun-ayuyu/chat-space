@@ -5,6 +5,7 @@
       %ul
         - group.errors.full_messages.each do |message|
           %li= message
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :name, 'グループ名', class: 'chat-group-form__label'
@@ -25,9 +26,9 @@
     .chat-group-form__field--right
       #chat-group-users
         .chat-group-user.clearfix
-          %p.chat-group-user__name
-            = current_user.name
-
+          %input{ name: 'group[user_ids][]', type: 'hidden', value: current_user.id }
+            %p.chat-group-user__name
+              = current_user.name
         - group.users.each do |user|
           - unless current_user.id == user.id
             .chat-group-user.clearfix
